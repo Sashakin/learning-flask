@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask import jsonify, json
+from flask import SQLAlchemy
 from models import db, User, Place
 from forms import SignupForm, LoginForm, AddressForm
 
