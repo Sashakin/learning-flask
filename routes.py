@@ -86,17 +86,17 @@ def home():
 		if form.validate() == False:
 			return render_template('home.html', form=form)
 		else:
-			# handle the form submission
+			handle the form submission
 			address = form.address.data
 
 			p = Place()
 			my_coordinates = p.address_to_latlng(address)
 			places = p.query(address)
 
-			return render_template('home.html', form=form, my_coordinates=my_coordinates, places=places)
+			return render_template('home.html', form=form)
 
 	elif request.method == 'GET':		
-		return render_template("home.html", form=form, my_coordinates=my_coordinates, places=places)	
+		return render_template("home.html", form=form)	
 
 
 

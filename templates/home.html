@@ -57,6 +57,12 @@
       }
     ).addTo(map);
 
+    var marker = L.marker([51.5, -0.09]).addTo(mymap);
+
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+
     for (var i = 0; i < planes.length; i++) {
       marker = new L.marker([planes[i][1],planes[i][2]])
         .bindPopup(planes[i][0])

@@ -28,11 +28,11 @@ class User(db.Model):
     return check_password_hash(self.pwdhash, password)
 
 
-# p = Place()
-# places = p.query("1600 Amphitheater Parkway Mountain View CA")
+ p = Place()
+ places = p.query("1600 Amphitheater Parkway Mountain View CA")
 class Place(object):
   def meters_to_walking_time(self, meters):
-    # 80 meters is one minute walking time
+     80 meters is one minute walking time
     return int(meters / 80)  
 
   def wiki_path(self, slug):

@@ -1,1 +1,1 @@
-web: gunicorn routes:damp-hollows-67957
+web: gunicorn app:app
