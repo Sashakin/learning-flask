@@ -86,7 +86,6 @@ def home():
 		if form.validate() == False:
 			return render_template('home.html', form=form)
 		else:
-			handle the form submission
 			address = form.address.data
 
 			p = Place()
