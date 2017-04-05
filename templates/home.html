@@ -27,6 +27,8 @@
                 {% endfor %}
               {% endif %}
 
+
+
               {{ form.address(placeholder="Explore nearby") }}
             </div>
             
@@ -67,7 +69,16 @@ polygon.bindPopup("I am a polygon.");
       marker = new L.marker([planes[i][1],planes[i][2]])
         .bindPopup(planes[i][0])
         .addTo(map);
-    }    
+    }  
+
+    var cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+    cloudmade = new L.TileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {attribution: cloudmadeAttribution});
+
+var map = new L.Map('map').addLayer(cloudmade).setView(new L.LatLng(48.5, 2.5), 15);
+
+var osmGeocoder = new L.Control.OSMGeocoder();
+
+map.addControl(osmGeocoder);  
   </script>
 
 {% endblock %}
